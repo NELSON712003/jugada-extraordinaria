@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		
+		{% load static %}
+
+		<title>Single Video</title>
+
+		<link rel="shortcut icon" type="image/png" href="{% static 'icons8-home-100.png' %}"/>
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+	</head>
+	<body class="single is-preload">	
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="{% url 'home' %}">TUS VIDEOS FAVORITOS</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="#">Ver Videos</a></li>
+							<li><a href="{% url 'admin:index' %}" target="_blank">Subir Videos</a></li>
+							<li><a href="{% url 'all_videos_view' %}" >Todos los Videos</a></li>
+							<li><a href="{% url 'logout' %}" >Logout</a></li>
+						</ul>
+					</nav>
+				</header>
+
+
+				<!-- Main -->
+					<div id="main">
+						
+
+						<!-- Post -->
+							<article class="post">
+								
+								<header>
+									<div class="title">
+										<h2>{{titulo}}</h2>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2015-11-01">{{ fecha_ingreso }}</time>
+										<a id="author_video" ><span class="name"> {{ username }} </span><img src="images/avatar.jpg" alt="" /></a>
+									</div>
+								</header>
+
+								<iframe width="560" height="400" src={{direccion}} frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+								<p>Descripcion del Video Elejido.</p>
+								
+								<footer>
+									<ul class="stats">
+										<li><a href="#">Info General</a></li>
+										<li><a class="icon solid fa-heart"> Cantidad de Reproducciones: {{ cantidad_reproducciones }} </a></li>
+										<li><a class="icon solid fa-heart"> Estado {{ Estado_Video.nombre }} </a></li>
+									</ul>
+								</footer>
+
+							</article>
+
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+			<script src="{% static 'js/single_js.js' %}"></script>
+
+			
+
+	</body>
+</html>

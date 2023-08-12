@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap 4 CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- Font Awesome CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+			integrity="sha512-M2A6Oxo+0nBtJ5C5SPrM5q3JfsoILv5yL4grn4jmFCISJn7YtRgz+dlDzqrUCuoDYDBZwkzJTDMMltLHTf+zxQ=="
+			crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<style>
+			body {
+				background-color: #f1f1f1;
+			}
+
+			.container-login {
+				margin-top: 10%;
+			}
+
+			.card-header {
+				background-color: #17a2b8;
+				color: #fff;
+			}
+
+			.btn-login {
+				background-color: #17a2b8;
+				color: #fff;
+			}
+
+			.btn-login:hover {
+				background-color: #11707a;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 container-login">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="text-center">Login</h4>
+						</div>
+						<div class="card-body">
+
+							<form method="POST" action="{% url 'login' %}">
+								{% csrf_token %}
+								<div class="form-group">
+									<label for="username">Username:</label>
+									<input type="text" class="form-control" id="username" name="username" required>
+								</div>
+								<div class="form-group">
+									<label for="password">Password:</label>
+									<input type="password" class="form-control" id="password" name="password" required>
+								</div>
+								<button type="submit" class="btn btn-login btn-block">Login</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Bootstrap 4 JS -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		
+		{% load static %}
+		
+		<title>Ver Videos</title>
+		
+		<link rel="shortcut icon" type="image/png" href="{% static 'icons8-home-100.png' %}"/>
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+	</head>
+	<body class="is-preload">
+				
+			</iframe>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1><a href="{% url 'home' %}">TUS VIDEOS FAVORITOS</a></h1>
+					<nav class="links">
+						<ul>
+							<li><a href="#">Ver Videos</a></li>
+							<li><a href="{% url 'admin:index' %}" target="_blank">Subir Videos</a></li>
+							<li><a href="{% url 'all_videos_view' %}" >Todos los Videos</a></li>
+							<li><a href="{% url 'logout' %}" >Logout</a></li>
+						</ul>
+					</nav>
+				</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<div id="div_article_main" hidden> 
+							<article class="post" >
+								
+								<header>
+									<div class="title">
+										<a class="etiqueta_a_url_video" > <h2 id="titulo_video" >Titulo Video #111</h2> </a>
+										<h3 id="cantidad_reproducciones_video_user" >Cantidad Reproducciones: ???</h3>
+										<h3 id="fecha_ingreso_video_user" >Fecha Ingreso: ???</h3>
+									</div>
+									<div class="meta">
+										<a  class="author"><img src="{% static 'img/avatar.jpg' %}" /></a>
+									</div>
+
+								</header>
+
+								<a class="etiqueta_a_url_video" href="#"> <img id="image_video" src="{% static 'img/pic01.jpg' %}" /> </a>
+								
+							</article>
+
+						</div>
+						
+						<ul class="actions pagination">
+							<li><a href="#" class="disabled button large previous">Previous Page</a></li>
+							<li><a href="#" class="button large next">Next Page</a></li>
+						</ul>
+
+					</div>
+
+				<!-- Sidebar -->
+					<section id="sidebar">
+
+						<!-- Intro -->
+							<section id="intro">
+								<a href="#" class="logo"><img src="{% static 'img/logo.jpg' %}" alt="" /></a>
+								<header>
+									<h2>Tus Videos Favoritos</h2>
+									<p>Guardar y Reproducir tus Videos</p>
+								</header>
+							</section>
+
+						<!-- Mini Posts -->
+							<section>
+								<div class="mini-posts" id="div_article_section" hidden>
+									<!-- Mini Post -->
+									<article class="mini-post">
+										<header>
+											<a class="etiqueta_a_url_video" ><h3>Titulo del video Mini Post</h3> </a>
+											<h4 id="cantidad_reproducciones">Reproducciones: ???</h4>
+											<h5 id="fecha_publicasion">Fecha: 15/15/2000</h5>
+											<img src="{% static 'img/avatar.jpg' %}" alt="" />
+										</header>
+										<a href="single.html" class="etiqueta_a_url_video"><img id="image_video" alt="" /></a>
+									</article>
+								</div>
+
+							</section>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/browser.min.js' %}"></script>
+			<script src="{% static 'js/breakpoints.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<script src="{% static 'js/main.js' %}"></script>
+
+			<script src="{% static 'js/home_js.js' %}"></script>
+			
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+			<script type="text/javascript">
+				//Variable globales
+				var url_video_single = "{% url 'ver_video_single' 99999999 %}"
+				console.log( url_video_single )
+			</script>
+
+	</body>
+</html>

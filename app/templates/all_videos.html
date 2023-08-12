@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		
+		{% load static %}
+		
+		<title>Ver Videos</title>
+		
+		<link rel="shortcut icon" type="image/png" href="{% static 'icons8-home-100.png' %}"/>
+
+		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<style>
+		  .card {
+		    max-width: 400px;
+		    width: 90vw;
+		    margin: 0 auto;
+		    /* otros estilos */
+		    border: 2px solid #ddd;
+		    border-radius: 10px;
+		    padding: 10px;
+		    box-shadow: 2px 2px 5px #ccc;
+		    background-color: #f5f5f5;
+			  margin-bottom: 20px;
+			  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+		  }
+
+			.card:hover {
+			  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+			  transform: translateY(-2px);
+			}
+
+			.card img {
+			  max-width: 100%;
+			  max-height: 100%;
+			}
+
+			#div_article_main {
+			  display: flex;
+			  justify-content: center;
+			}
+
+			.card {
+			  width: 350px;
+			}
+
+			.card-body {
+			  flex-grow: 1;
+			  display: flex;
+			  flex-direction: column;
+			  justify-content: center;
+			}
+					.card-img-top-container {
+			  height: 200px;
+			  overflow: hidden;
+			}
+
+			.card-img-top {
+			  width: 100%; /* o cualquier otro tamaño que desees */
+			  height: 300px;
+			  object-fit: contain;
+			  display: block;
+			  margin: 0 auto;
+			}
+
+		</style>
+
+
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1><a href="{% url 'home' %}">TUS VIDEOS FAVORITOS</a></h1>
+				<nav class="links">
+					<ul>
+						<li><a href="#">Ver Videos</a></li>
+						<li><a href="{% url 'admin:index' %}" target="_blank">Subir Videos</a></li>
+						<li><a href="{% url 'all_videos_view' %}" >Todos los Videos</a></li>
+						<li><a href="{% url 'logout' %}" >Logout</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		</div>
+
+		<div class="container mx-auto">
+		  
+		    <div class="row justify-content-center mt-4">
+			    <div class="col-md-6">
+			      <div class="input-group">
+			        <input type="text" onkeydown="search_video_title()" id="input_name_video_serch" class="form-control w-75" placeholder="Buscar..." aria-label="Buscar..." aria-describedby="button-addon2">
+			      </div>
+			    </div>
+			  </div>
+
+		  <br>
+
+		  <div class="row">
+
+		    
+		    <div id="div_article_main" class="col-md-6 col-lg-4 mb-4" hidden>
+		      
+		      <div class="card">
+		        
+		        <img id="image_video" src="https://via.placeholder.com/350x150" class="card-img-top" alt="...">
+		        
+		        <div class="card-body text-center" style="margin-top:20px;">
+		          <a class="etiqueta_a_url_video" > <h5 id="titulo_video" class="card-title">Título del Video</h5> </a>
+		          <p>
+		          	<span id="cantidad_reproducciones_video_user" >100 visualizaciones</span> <br>
+		          	<span id="fecha_ingreso_video_user" >100 visualizaciones</span>
+		          </p>
+		        </div>
+
+		      </div>
+
+		    </div>
+
+		  </div>
+
+		</div>
+
+
+
+	<!-- Scripts -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/browser.min.js' %}"></script>
+		<script src="{% static 'js/breakpoints.min.js' %}"></script>
+		<script src="{% static 'js/util.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+
+		<script src="{% static 'js/all_videos_js.js' %}"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+		<script type="text/javascript">
+			//Variable globales
+			var url_video_single = "{% url 'ver_video_single' 99999999 %}"
+			var api_all_videos_public = "{% url 'api_all_videos_public'%}"
+			var api_search_videos_public = "{% url 'api_search_videos_public'%}"
+			var lista_divs_historial = []
+		</script>
+
+	</body>
+</html>
